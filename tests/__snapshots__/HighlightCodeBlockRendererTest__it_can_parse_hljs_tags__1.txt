@@ -1,0 +1,4 @@
+<pre><code class="language-php hljs php" data-lang="php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(
+    <span class="hljs-highlight  keyword">public readonly</span> <span class="hljs-highlight  type">string</span> <span class="hljs-highlight  prop">$title</span>,
+    <span class="hljs-highlight  keyword">public readonly</span> <span class="hljs-highlight  type">string</span> <span class="hljs-highlight  prop">$body</span>,
+)</span> </span>{}</code></pre>

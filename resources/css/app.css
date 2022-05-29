@@ -1,0 +1,155 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "code.css";
+
+html {
+    /* Makes clamp() work in Safari */
+    min-height: 0vw; 
+    font-size: 16px;
+    font-size: min(max(1rem, 2vw), 1.15rem);
+    
+    @supports (font-size: clamp(1rem, 2vw, 1.15rem)) {
+        font-size: clamp(1rem, 2vw, 1.15rem);
+    }
+  }
+
+.toc-entry {
+    display: grid;
+    grid-template-columns: auto max-content;
+    grid-template-areas: "chapter page";
+    align-items: end;
+    gap: 0 0.5ch;
+}
+
+.toc-chapter {
+    grid-area: chapter;
+    position: relative;
+    overflow: hidden;
+}
+
+.toc-chapter::after {
+    position: absolute;
+    padding-left: 0.5ch;
+    content: " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+    text-align: right;
+}
+
+.toc-entry:hover .toc-chapter{
+    @apply underline
+}
+
+.toc-page {
+    grid-area: page;
+    @apply tabular-nums;
+}
+
+.markup {
+    @apply text-lg;
+    line-height: 1.75;
+}
+
+.markup strong {
+    @apply font-semibold;
+}
+
+.markup a {
+    @apply underline;
+}
+
+.markup a:hover{
+    @apply text-ink;
+    @apply text-opacity-80;
+}
+
+.markup :is(h1, h2, h3) {
+    @apply max-w-2xl;
+    @apply mx-auto;
+    @apply font-display;
+    @apply font-semibold;
+    @apply leading-snug;
+    @apply mb-8;
+}
+
+.markup h1 {
+    @apply text-2xl;
+    @apply mb-12;
+}
+
+.markup h2 {
+    @apply text-2xl;
+    @apply lg:text-3xl;
+    @apply mt-24;
+    @apply mb-12;
+}
+
+.markup h3 {
+    @apply text-xl;
+    @apply mt-12;
+    @apply mb-8;
+}
+
+.markup :is(p, ul, ol) {
+    @apply max-w-2xl;
+    @apply mx-auto;
+    @apply mb-8;
+}
+
+.markup ul {
+    @apply list-disc;
+    @apply pl-6;
+}
+
+.markup ol {
+    @apply list-decimal;
+    @apply pl-6;
+}
+
+.markup hr {
+    @apply border-0;
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+    @apply my-12;
+}
+
+.markup hr:after {
+    @apply -mt-3;
+    @apply font-display;
+    content:'. . .';
+    
+}
+
+.markup pre {
+    @apply my-12;
+    @apply -mx-6;
+    @apply lg:mx-0;
+    @apply max-w-4xl;
+    @apply bg-ink;
+    @apply bg-opacity-5;
+}
+
+.markup pre code {
+    @apply px-6;
+    @apply py-8;
+    @apply md:pl-16;
+    @apply lg:pl-24;
+    @apply text-ink;
+}
+
+.markup pre code::-webkit-scrollbar, 
+.markup pre code::-webkit-scrollbar-corner {
+    width: 4px;
+    height: 4px;
+}
+
+.markup pre code::-webkit-scrollbar-track {
+    @apply bg-transparent;
+}
+
+.markup pre code::-webkit-scrollbar-thumb {
+    @apply bg-ink;
+    @apply bg-opacity-20;
+}
