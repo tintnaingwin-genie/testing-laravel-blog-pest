@@ -1,4 +1,4 @@
-[![Tests](https://github.com/spatie/testing-laravel-blog-pest/actions/workflows/run-tests.yml/badge.svg)](https://github.com/spatie/testing-laravel-blog-pest/actions/workflows/run-tests.yml)
+[![Tests](https://github.com/tintnaingwin-genie/testing-laravel-blog-pest/actions/workflows/run-tests.yml/badge.svg)](https://github.com/tintnaingwin-genie/testing-laravel-blog-pest/actions/workflows/run-tests.yml)
 
 ## Blog demo application 
 
